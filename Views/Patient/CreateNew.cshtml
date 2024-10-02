@@ -1,0 +1,27 @@
+﻿@model Patient
+<div class="row">
+    <div class="col-12 mb-3">
+        <h2>Complete Appointment with @ViewBag.Name</h2>
+    </div>
+</div>
+
+<div class="row">
+    <form action="/Patient/createNew" method="post">
+        <input type="hidden" name="DoctorId" value="@ViewBag.Id" />
+        <div class="mb-3">
+            <label for="exampleCategoryName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="exampleCategoryName" name="Name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleCategoryName" class="form-label">Appointment Date</label>
+            <input type="date" class="form-control" id="exampleCategoryName" name="Appointment">
+        </div>
+        <div class="mb-3">
+            <label for="exampleCategoryName" class="form-label">Appointment Time</label>
+            <input type="time" class="form-control" id="exampleCategoryName" name="TimeOnly">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/Doctor/Index" type="submit" class="btn btn-primary">Back</a>
+    </form>
+</div>
+

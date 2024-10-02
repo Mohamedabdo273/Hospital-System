@@ -1,0 +1,31 @@
+﻿
+<div class="row">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Patient Name</th>
+                <th scope="col">Appointment Date</th>
+                <th scope="col">Appointment Time</th>
+                <th scope="col">DoctorName</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="table-light">
+                    <th scope="row">@item.Id</th>
+                    <td>@item.Name</td>
+                    <td>@item.Appointment</td>
+                    <td>@item.TimeOnly</td>
+                    <td>@item.Doctor.Name</td>
+                </tr>
+            }
+        </tbody>
+        
+    </table>
+    
+</div>
+<div >
+<a href="/Doctor/Index" class="btn btn-secondary">Back..</a>
+</div>
