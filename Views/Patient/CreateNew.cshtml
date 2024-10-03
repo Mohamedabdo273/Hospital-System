@@ -1,24 +1,27 @@
 ﻿@model Patient
 <div class="row">
     <div class="col-12 mb-3">
-        <h2>Complete Appointment with @ViewBag.Name</h2>
+        <h2>Complete Appointment with @Model.Doctor.Name</h2>
     </div>
 </div>
 
 <div class="row">
-    <form action="/Patient/createNew" method="post">
-        <input type="hidden" name="DoctorId" value="@ViewBag.Id" />
+    <form action="/Patient/CreateNew" method="post">
+        <input type="hidden" asp-for="DoctorId" name="DoctorId" value="@Model.Doctor.Id" />
         <div class="mb-3">
-            <label for="exampleCategoryName" class="form-label">Name</label>
+            <label name="Name" for="exampleCategoryName" class="form-label">Name</label>
             <input type="text" class="form-control" id="exampleCategoryName" name="Name">
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
         <div class="mb-3">
-            <label for="exampleCategoryName" class="form-label">Appointment Date</label>
-            <input type="date" class="form-control" id="exampleCategoryName" name="Appointment">
+            <label for="exampleCategoryName" class="form-label" name="Appointment">Appointment Date</label>
+            <input  type="date" class="form-control" id="exampleCategoryName" name="Appointment">
+            <span asp-validation-for="Appointment" class="text-danger"></span>
         </div>
         <div class="mb-3">
-            <label for="exampleCategoryName" class="form-label">Appointment Time</label>
-            <input type="time" class="form-control" id="exampleCategoryName" name="TimeOnly">
+            <label name="TimeOnly" for="exampleCategoryName" class="form-label">Appointment Time</label>
+            <input  type="time" class="form-control" id="exampleCategoryName" name="TimeOnly">
+            <span asp-validation-for="TimeOnly" class="text-danger"></span>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         <a href="/Doctor/Index" type="submit" class="btn btn-primary">Back</a>

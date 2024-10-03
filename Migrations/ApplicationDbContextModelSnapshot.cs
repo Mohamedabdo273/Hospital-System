@@ -44,7 +44,7 @@ namespace Hospital_System.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Doctors");
+                    b.ToTable("Doctors", (string)null);
                 });
 
             modelBuilder.Entity("Hospital_System.Models.Patient", b =>
@@ -72,7 +72,7 @@ namespace Hospital_System.Migrations
 
                     b.HasIndex("DoctorId");
 
-                    b.ToTable("Patients");
+                    b.ToTable("Patients", (string)null);
                 });
 
             modelBuilder.Entity("Hospital_System.Models.Patient", b =>
