@@ -35,12 +35,15 @@ namespace Hospital_System.Controllers
         }
         [HttpPost]
         public IActionResult CreateNew(Patient patient)
-        {    
+        {
+           
+               
                 db.Patients.Add(patient);
                 db.SaveChanges();
                 return RedirectToAction("Index", "Doctor");
-                 
+           
         }
+
 
     }
 }

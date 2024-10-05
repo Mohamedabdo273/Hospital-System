@@ -10,18 +10,18 @@
         <input type="hidden" asp-for="DoctorId" name="DoctorId" value="@Model.Doctor.Id" />
         <div class="mb-3">
             <label name="Name" for="exampleCategoryName" class="form-label">Name</label>
-            <input type="text" class="form-control" id="exampleCategoryName" name="Name">
-            <span asp-validation-for="Name" class="text-danger"></span>
+            <input type="text" class="form-control" id="exampleCategoryName" name="Name" required>
+            
         </div>
         <div class="mb-3">
             <label for="exampleCategoryName" class="form-label" name="Appointment">Appointment Date</label>
-            <input  type="date" class="form-control" id="exampleCategoryName" name="Appointment">
-            <span asp-validation-for="Appointment" class="text-danger"></span>
+            <input type="date" class="form-control" id="exampleCategoryName" name="Appointment" required>
+            
         </div>
         <div class="mb-3">
             <label name="TimeOnly" for="exampleCategoryName" class="form-label">Appointment Time</label>
-            <input  type="time" class="form-control" id="exampleCategoryName" name="TimeOnly">
-            <span asp-validation-for="TimeOnly" class="text-danger"></span>
+            <input type="time" class="form-control" id="exampleCategoryName" name="TimeOnly" required>
+            
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         <a href="/Doctor/Index" type="submit" class="btn btn-primary">Back</a>
